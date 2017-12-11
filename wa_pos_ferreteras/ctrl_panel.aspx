@@ -135,7 +135,7 @@
                                         </div>
                                         <div class="col-md-3 text-center" id="div_vendedor" runat="server">
                                             <asp:CheckBox CssClass="checkbox-inline" ID="chkb_vendedor" runat="server" Text="Vendedor" AutoPostBack="True" OnCheckedChanged="chkb_vendedor_CheckedChanged" />
-                                            <asp:Image CssClass="img-responsive" ID="img_vendedor" runat="server" ImageUrl="~/images/teamwork/png/teamwork.png" Width="32" Height="32" />
+                                            <asp:Image CssClass="img-responsive" ID="img_vendedor" runat="server" ImageUrl="~/images/teamwork/png/teamwork-1.png" Width="32" Height="32" />
                                         </div>
                                         <br />
                                         <div class="col-md-12 text-right">
@@ -170,11 +170,11 @@
                                             </asp:GridView>
                                             <br />
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-2">
 
-                                            <asp:Image CssClass="center-block img-responsive" ID="Image1" runat="server" ImageUrl="~/images/teamwork/png/teamwork-1.png" Width="128" Height="128" />
+                                            <asp:Image CssClass="center-block img-responsive" ID="Image1" runat="server" ImageUrl="~/images/teamwork/png/curriculum.png" Width="128" Height="128" />
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-5">
                                             <h5>
                                                 <asp:Label CssClass="control-label" ID="lbl_name_user" runat="server" Text="*Nombre(s)"></asp:Label></h5>
                                             <asp:TextBox CssClass="form-control" ID="txt_name_user" runat="server" placeholder="Capturar Nombre(s)"></asp:TextBox>
@@ -200,7 +200,7 @@
                                                 ForeColor="orange">
                                             </asp:RequiredFieldValidator>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-5">
                                             <h5>
                                                 <asp:Label CssClass="control-label" ID="lbl_code_user" runat="server" Text="*Usuario"></asp:Label></h5>
                                             <asp:TextBox CssClass="form-control" ID="txt_code_user" runat="server" placeholder="Capturar Usuario"></asp:TextBox>
@@ -233,10 +233,10 @@
                                             <asp:CheckBox CssClass="checkbox-inline" ID="chkb_editar_empresa" runat="server" AutoPostBack="true" Text="Editar" OnCheckedChanged="chkb_editar_empresa_CheckedChanged" />
                                         </div>
                                         <div class="row" id="div_empresa" runat="server" visible="true">
-                                            <div class="col-md-4">
+                                            <div class="col-md-2">
                                                 <asp:Image CssClass="center-block img-responsive" ID="img_empresa" runat="server" ImageUrl="~/images/teamwork/png/process.png" Width="128" Height="128" />
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-6">
                                                 <asp:TextBox CssClass="form-control" ID="txt_business_name" runat="server" placeholder="Capturar nombre de Empresa" Visible="True"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfv_business_name" runat="server" Visible="false"
                                                     ControlToValidate="txt_business_name"
@@ -296,12 +296,12 @@
                                         <h3>Control de Contribuyentes</h3>
                                     </div>
                                     <div class="panel-body">
-                                         <div class="col-md-12 text-right">
+                                        <div class="col-md-12 text-right">
                                             <asp:RadioButton CssClass="radio-inline" ID="rb_agregar_contribuyentes" runat="server" Text="Agregar" AutoPostBack="True" OnCheckedChanged="rb_agregar_contribuyentes_CheckedChanged" />
                                             <asp:RadioButton CssClass="radio-inline" ID="rb_editar_contribuyentes" runat="server" Text="Editar" AutoPostBack="True" OnCheckedChanged="rb_editar_contribuyentes_CheckedChanged" />
-                                            <asp:RadioButton CssClass="radio-inline" ID="rb_eliminar_contribuyentes" runat="server" Text="Eliminar" AutoPostBack="True" OnCheckedChanged="rb_eliminar_contribuyentes_CheckedChanged"  />
+                                            <asp:RadioButton CssClass="radio-inline" ID="rb_eliminar_contribuyentes" runat="server" Text="Eliminar" AutoPostBack="True" OnCheckedChanged="rb_eliminar_contribuyentes_CheckedChanged" />
                                         </div>
-                                             <div class="col-md-offset-3 col-md-6">
+                                        <div class="col-md-offset-3 col-md-6">
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <asp:TextBox CssClass="form-control" ID="txt_buscar_contribuyentes" runat="server" placeholder="Buscar" Visible="false"></asp:TextBox>
@@ -327,9 +327,9 @@
                                             </asp:GridView>
                                             <br />
                                         </div>
-                                        
+
                                         <div class="row" id="div2" runat="server" visible="true">
-                                            <div class="col-md-4">
+                                            <div class="col-md-2">
                                                 <asp:Image CssClass="center-block img-responsive" ID="img_contribuyentes" runat="server" ImageUrl="~/images/teamwork/png/transfer.png" Width="128" Height="128" />
                                             </div>
                                             <div class="col-md-4">
@@ -366,14 +366,14 @@
                                                     <asp:TextBox CssClass="form-control" ID="txt_email_contribuyentes" runat="server" placeholder="Capturar Email"></asp:TextBox>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-6">
                                                 <asp:TextBox CssClass="form-control" ID="txt_calle_contribuyentes" runat="server" placeholder="Capturar Calle"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfv_calle_contribuyentes" runat="server" Visible="false"
                                                     ControlToValidate="txt_calle_contribuyentes"
                                                     ErrorMessage="Campo Requerido"
                                                     ForeColor="orange">
                                                 </asp:RequiredFieldValidator>
-                                                  <br />
+                                                <br />
                                                 <div class="input-group">
                                                     <asp:TextBox CssClass="form-control" ID="txt_cp_contribuyentes" runat="server" placeholder="Capturar Código Postal" MaxLength="6"></asp:TextBox>
                                                     <ajaxToolkit:MaskedEditExtender ID="me_cp_contribuyentes" runat="server" TargetControlID="txt_cp_contribuyentes" Mask="99999" />
@@ -398,6 +398,230 @@
                                         <div class="row">
                                             <div class="col-md-12 text-right">
                                                 <asp:Button CssClass="btn" ID="cmd_guarda_contribuyentes" runat="server" Text="Guardar" OnClick="cmd_guarda_contribuyentes_Click" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer"></div>
+                                </div>
+                                <div class="panel panel-default" id="pnl_proveedores" runat="server" visible="false">
+                                    <div class="panel-heading">
+                                        <h3>Control de Proveedores</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="col-md-12 text-right">
+                                            <asp:RadioButton CssClass="radio-inline" ID="rb_agregar_proveedores" runat="server" Text="Agregar" AutoPostBack="True" OnCheckedChanged="rb_agregar_proveedores_CheckedChanged" />
+                                            <asp:RadioButton CssClass="radio-inline" ID="rb_editar_proveedores" runat="server" Text="Editar" AutoPostBack="True" OnCheckedChanged="rb_editar_proveedores_CheckedChanged" />
+                                            <asp:RadioButton CssClass="radio-inline" ID="rb_eliminar_proveedores" runat="server" Text="Eliminar" AutoPostBack="True" OnCheckedChanged="rb_eliminar_proveedores_CheckedChanged" />
+                                        </div>
+                                        <div class="col-md-offset-3 col-md-6">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <asp:TextBox CssClass="form-control" ID="txt_buscar_proveedores" runat="server" placeholder="Buscar" Visible="false"></asp:TextBox>
+                                                    <span class="input-group-btn">
+                                                        <asp:Button CssClass="btn" ID="cmd_buscar_proveedores" runat="server" Text="Ir" Visible="false" OnClick="cmd_buscar_proveedores_Click" />
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <asp:GridView CssClass="table" ID="gv_proveedores" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="gv_proveedores_PageIndexChanging">
+                                                <Columns>
+                                                    <asp:TemplateField>
+                                                        <ItemTemplate>
+                                                            <asp:CheckBox ID="chk_proveedores" runat="server" onclick="CheckOne(this)" OnCheckedChanged="chk_proveedores_CheckedChanged" AutoPostBack="true" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:BoundField DataField="rfc" HeaderText="RFC" SortExpression="rfc" Visible="true" />
+                                                    <asp:BoundField DataField="desc_tipo_rfc" HeaderText="Tipo RFC" SortExpression="desc_tipo_rfc" />
+                                                    <asp:BoundField DataField="razon_social" HeaderText="Razón Social" SortExpression="razon_social" />
+                                                    <asp:BoundField DataField="fecha_registro" HeaderText="Fecha de Registro" SortExpression="fecha_registro" DataFormatString="{0:dd/MM/yyyy}" />
+                                                </Columns>
+                                            </asp:GridView>
+                                            <br />
+                                        </div>
+
+                                        <div class="row" id="div1" runat="server" visible="true">
+                                            <div class="col-md-2">
+                                                <asp:Image CssClass="center-block img-responsive" ID="img_proveedores" runat="server" ImageUrl="~/images/teamwork/png/chat.png" Width="128" Height="128" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <asp:DropDownList CssClass="form-control" ID="ddl_tiporfc_proveedores" runat="server" ToolTip="Seleccionar tipo RFC"></asp:DropDownList>
+                                                    <asp:RequiredFieldValidator ID="rfv_tiporfc_proveedores" runat="server" Visible="false"
+                                                        ErrorMessage="Campo Requerido"
+                                                        ControlToValidate="ddl_tiporfc_proveedores" InitialValue="0"
+                                                        ForeColor="orange">
+                                                    </asp:RequiredFieldValidator>
+                                                    <br />
+                                                    <asp:TextBox CssClass="form-control" ID="txt_rfc_proveedores" runat="server" placeholder="RFC"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="rfv_rfc_proveedores" runat="server" Visible="false"
+                                                        ControlToValidate="txt_rfc_proveedores"
+                                                        ErrorMessage="Campo Requerido"
+                                                        ForeColor="orange">
+                                                    </asp:RequiredFieldValidator>
+                                                    <br />
+                                                    <asp:TextBox CssClass="form-control" ID="txt_rs_proveedores" runat="server" placeholder="Capturar Razón Social" Visible="True"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="rfv_rs_proveedores" runat="server" Visible="false"
+                                                        ControlToValidate="txt_rs_proveedores"
+                                                        ErrorMessage="Campo Requerido"
+                                                        ForeColor="orange">
+                                                    </asp:RequiredFieldValidator>
+                                                    <br />
+                                                    <asp:TextBox CssClass="form-control" ID="txt_telefono_proveedores" runat="server" placeholder="Capturar Teléfono"></asp:TextBox>
+                                                    <ajaxToolkit:MaskedEditExtender ID="me_telefono_proveedores" runat="server" TargetControlID="txt_telefono_proveedores" Mask="(52) 99.99.99.99.99.99 ext 99999" />
+                                                    <asp:RequiredFieldValidator ID="rfv_telefono_proveedores" runat="server" Visible="false"
+                                                        ControlToValidate="txt_telefono_proveedores"
+                                                        ErrorMessage="Campo Requerido"
+                                                        ForeColor="orange">
+                                                    </asp:RequiredFieldValidator>
+                                                    <br />
+                                                    <asp:TextBox CssClass="form-control" ID="txt_email_proveedores" runat="server" placeholder="Capturar Email"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <asp:TextBox CssClass="form-control" ID="txt_calle_proveedores" runat="server" placeholder="Capturar Calle"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfv_calle_proveedores" runat="server" Visible="false"
+                                                    ControlToValidate="txt_calle_proveedores"
+                                                    ErrorMessage="Campo Requerido"
+                                                    ForeColor="orange">
+                                                </asp:RequiredFieldValidator>
+                                                <br />
+                                                <div class="input-group">
+                                                    <asp:TextBox CssClass="form-control" ID="txt_cp_proveedores" runat="server" placeholder="Capturar Código Postal" MaxLength="6"></asp:TextBox>
+                                                    <ajaxToolkit:MaskedEditExtender ID="me_cp_proveedores" runat="server" TargetControlID="txt_cp_proveedores" Mask="99999" />
+                                                    <span class="input-group-btn">
+                                                        <asp:Button CssClass="btn" ID="cmd_vcp_proveedores" runat="server" Text="validar" OnClick="cmd_vcp_proveedores_Click" />
+                                                    </span>
+                                                </div>
+                                                <asp:RequiredFieldValidator ID="rfv_vcp_proveedores" runat="server" Visible="false"
+                                                    ControlToValidate="txt_cp_proveedores"
+                                                    ErrorMessage="Campo Requerido"
+                                                    ForeColor="orange">
+                                                </asp:RequiredFieldValidator>
+                                                <br />
+                                                <asp:DropDownList CssClass="form-control" ID="ddl_colonia_proveedores" runat="server" ToolTip="Seleccionar colonia"></asp:DropDownList>
+                                                <br />
+                                                <asp:TextBox CssClass="form-control" ID="txt_municipio_proveedores" runat="server" placeholder="Capturar Municipio" Enabled="false"></asp:TextBox>
+                                                <br />
+                                                <asp:TextBox CssClass="form-control" ID="txt_estado_proveedores" runat="server" placeholder="Capturar Estado" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12 text-right">
+                                                <asp:Button CssClass="btn" ID="cmd_guarda_proveedores" runat="server" Text="Guardar" OnClick="cmd_guarda_proveedores_Click" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer"></div>
+                                </div>
+                                <div class="panel panel-default" id="pnl_clientes" runat="server" visible="false">
+                                    <div class="panel-heading">
+                                        <h3>Control de Clientes</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="col-md-12 text-right">
+                                            <asp:RadioButton CssClass="radio-inline" ID="rb_agregar_clientes" runat="server" Text="Agregar" AutoPostBack="True" OnCheckedChanged="rb_agregar_clientes_CheckedChanged" />
+                                            <asp:RadioButton CssClass="radio-inline" ID="rb_editar_clientes" runat="server" Text="Editar" AutoPostBack="True" OnCheckedChanged="rb_editar_clientes_CheckedChanged" />
+                                            <asp:RadioButton CssClass="radio-inline" ID="rb_eliminar_clientes" runat="server" Text="Eliminar" AutoPostBack="True" OnCheckedChanged="rb_eliminar_clientes_CheckedChanged" />
+                                        </div>
+                                        <div class="col-md-offset-3 col-md-6">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <asp:TextBox CssClass="form-control" ID="txt_buscar_clientes" runat="server" placeholder="Buscar" Visible="false"></asp:TextBox>
+                                                    <span class="input-group-btn">
+                                                        <asp:Button CssClass="btn" ID="cmd_buscar_clientes" runat="server" Text="Ir" Visible="false" OnClick="cmd_buscar_clientes_Click" />
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <asp:GridView CssClass="table" ID="gv_clientes" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="gv_clientes_PageIndexChanging">
+                                                <Columns>
+                                                    <asp:TemplateField>
+                                                        <ItemTemplate>
+                                                            <asp:CheckBox ID="chk_clientes" runat="server" onclick="CheckOne(this)" OnCheckedChanged="chk_clientes_CheckedChanged" AutoPostBack="true" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:BoundField DataField="rfc" HeaderText="RFC" SortExpression="rfc" Visible="true" />
+                                                    <asp:BoundField DataField="desc_tipo_rfc" HeaderText="Tipo RFC" SortExpression="desc_tipo_rfc" />
+                                                    <asp:BoundField DataField="razon_social" HeaderText="Razón Social" SortExpression="razon_social" />
+                                                    <asp:BoundField DataField="fecha_registro" HeaderText="Fecha de Registro" SortExpression="fecha_registro" DataFormatString="{0:dd/MM/yyyy}" />
+                                                </Columns>
+                                            </asp:GridView>
+                                            <br />
+                                        </div>
+
+                                        <div class="row" id="div3" runat="server" visible="true">
+                                            <div class="col-md-2">
+                                                <asp:Image CssClass="center-block img-responsive" ID="img_clientes" runat="server" ImageUrl="~/images/teamwork/png/teamwork.png" Width="128" Height="128" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <asp:DropDownList CssClass="form-control" ID="ddl_tiporfc_clientes" runat="server" ToolTip="Seleccionar tipo RFC"></asp:DropDownList>
+                                                    <asp:RequiredFieldValidator ID="rfv_tiporfc_clientes" runat="server" Visible="false"
+                                                        ErrorMessage="Campo Requerido"
+                                                        ControlToValidate="ddl_tiporfc_clientes" InitialValue="0"
+                                                        ForeColor="orange">
+                                                    </asp:RequiredFieldValidator>
+                                                    <br />
+                                                    <asp:TextBox CssClass="form-control" ID="txt_rfc_clientes" runat="server" placeholder="RFC"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="rfv_rfc_clientes" runat="server" Visible="false"
+                                                        ControlToValidate="txt_rfc_clientes"
+                                                        ErrorMessage="Campo Requerido"
+                                                        ForeColor="orange">
+                                                    </asp:RequiredFieldValidator>
+                                                    <br />
+                                                    <asp:TextBox CssClass="form-control" ID="txt_rs_clientes" runat="server" placeholder="Capturar Razón Social" Visible="True"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="rfv_rs_clientes" runat="server" Visible="false"
+                                                        ControlToValidate="txt_rs_clientes"
+                                                        ErrorMessage="Campo Requerido"
+                                                        ForeColor="orange">
+                                                    </asp:RequiredFieldValidator>
+                                                    <br />
+                                                    <asp:TextBox CssClass="form-control" ID="txt_telefono_clientes" runat="server" placeholder="Capturar Teléfono"></asp:TextBox>
+                                                    <ajaxToolkit:MaskedEditExtender ID="me_telefono_clientes" runat="server" TargetControlID="txt_telefono_clientes" Mask="(52) 99.99.99.99.99.99 ext 99999" />
+                                                    <asp:RequiredFieldValidator ID="rfv_telefono_clientes" runat="server" Visible="false"
+                                                        ControlToValidate="txt_telefono_clientes"
+                                                        ErrorMessage="Campo Requerido"
+                                                        ForeColor="orange">
+                                                    </asp:RequiredFieldValidator>
+                                                    <br />
+                                                    <asp:TextBox CssClass="form-control" ID="txt_email_clientes" runat="server" placeholder="Capturar Email"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <asp:TextBox CssClass="form-control" ID="txt_calle_clientes" runat="server" placeholder="Capturar Calle"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfv_calle_clientes" runat="server" Visible="false"
+                                                    ControlToValidate="txt_calle_clientes"
+                                                    ErrorMessage="Campo Requerido"
+                                                    ForeColor="orange">
+                                                </asp:RequiredFieldValidator>
+                                                <br />
+                                                <div class="input-group">
+                                                    <asp:TextBox CssClass="form-control" ID="txt_cp_clientes" runat="server" placeholder="Capturar Código Postal" MaxLength="6"></asp:TextBox>
+                                                    <ajaxToolkit:MaskedEditExtender ID="me_cp_clientes" runat="server" TargetControlID="txt_cp_clientes" Mask="99999" />
+                                                    <span class="input-group-btn">
+                                                        <asp:Button CssClass="btn" ID="cmd_vcp_clientes" runat="server" Text="validar" OnClick="cmd_vcp_clientes_Click" />
+                                                    </span>
+                                                </div>
+                                                <asp:RequiredFieldValidator ID="rfv_vcp_clientes" runat="server" Visible="false"
+                                                    ControlToValidate="txt_cp_clientes"
+                                                    ErrorMessage="Campo Requerido"
+                                                    ForeColor="orange">
+                                                </asp:RequiredFieldValidator>
+                                                <br />
+                                                <asp:DropDownList CssClass="form-control" ID="ddl_colonia_clientes" runat="server" ToolTip="Seleccionar colonia"></asp:DropDownList>
+                                                <br />
+                                                <asp:TextBox CssClass="form-control" ID="txt_municipio_clientes" runat="server" placeholder="Capturar Municipio" Enabled="false"></asp:TextBox>
+                                                <br />
+                                                <asp:TextBox CssClass="form-control" ID="txt_estado_clientes" runat="server" placeholder="Capturar Estado" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12 text-right">
+                                                <asp:Button CssClass="btn" ID="cmd_guarda_clientes" runat="server" Text="Guardar" OnClick="cmd_guarda_clientes_Click" />
                                             </div>
                                         </div>
                                     </div>
