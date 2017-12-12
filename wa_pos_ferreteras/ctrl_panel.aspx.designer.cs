@@ -103,13 +103,49 @@ namespace wa_pos_ferreteras {
         protected global::System.Web.UI.WebControls.LinkButton lkb_panel;
         
         /// <summary>
-        /// lkb_clientes control.
+        /// lkb_reportes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkb_clientes;
+        protected global::System.Web.UI.WebControls.LinkButton lkb_reportes;
+        
+        /// <summary>
+        /// Ventas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton Ventas;
+        
+        /// <summary>
+        /// lkb_gastos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkb_gastos;
+        
+        /// <summary>
+        /// lkb_recepcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkb_recepcion;
+        
+        /// <summary>
+        /// lkb_entregas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkb_entregas;
         
         /// <summary>
         /// lkb_inventario control.
@@ -139,6 +175,15 @@ namespace wa_pos_ferreteras {
         protected global::System.Web.UI.WebControls.LinkButton lkb_rprecios;
         
         /// <summary>
+        /// lkb_clientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkb_clientes;
+        
+        /// <summary>
         /// lkb_proveedores control.
         /// </summary>
         /// <remarks>
@@ -148,49 +193,13 @@ namespace wa_pos_ferreteras {
         protected global::System.Web.UI.WebControls.LinkButton lkb_proveedores;
         
         /// <summary>
-        /// lkb_reportes control.
+        /// lkb_contribuyentes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkb_reportes;
-        
-        /// <summary>
-        /// lkb_recepcion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkb_recepcion;
-        
-        /// <summary>
-        /// Ventas control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Ventas;
-        
-        /// <summary>
-        /// lkb_entregas control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkb_entregas;
-        
-        /// <summary>
-        /// lkb_gastos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkb_gastos;
+        protected global::System.Web.UI.WebControls.LinkButton lkb_contribuyentes;
         
         /// <summary>
         /// lkb_usarios control.
@@ -200,15 +209,6 @@ namespace wa_pos_ferreteras {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lkb_usarios;
-        
-        /// <summary>
-        /// lkb_contribuyentes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkb_contribuyentes;
         
         /// <summary>
         /// lkb_config control.
@@ -805,22 +805,22 @@ namespace wa_pos_ferreteras {
         protected global::System.Web.UI.WebControls.Image img_contribuyentes;
         
         /// <summary>
-        /// ddl_tiporfc_contribuyente control.
+        /// ddl_tiporfc_contribuyentes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_tiporfc_contribuyente;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_tiporfc_contribuyentes;
         
         /// <summary>
-        /// rfv_tiporfc_contribuyente control.
+        /// rfv_tiporfc_contribuyentes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_tiporfc_contribuyente;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_tiporfc_contribuyentes;
         
         /// <summary>
         /// txt_rfc_contribuyentes control.
@@ -1237,6 +1237,96 @@ namespace wa_pos_ferreteras {
         protected global::System.Web.UI.WebControls.TextBox txt_estado_proveedores;
         
         /// <summary>
+        /// txt_nombres_contactoproveedores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_nombres_contactoproveedores;
+        
+        /// <summary>
+        /// rfv_nombres_contactoproveedores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_nombres_contactoproveedores;
+        
+        /// <summary>
+        /// txt_apaterno_contactoproveedores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_apaterno_contactoproveedores;
+        
+        /// <summary>
+        /// rfv_apaterno_contactoproveedores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_apaterno_contactoproveedores;
+        
+        /// <summary>
+        /// txt_amaterno_contactoproveedores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_amaterno_contactoproveedores;
+        
+        /// <summary>
+        /// rfv_amaterno_contactoproveedores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_amaterno_contactoproveedores;
+        
+        /// <summary>
+        /// txt_telefono_contactoproveedores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_telefono_contactoproveedores;
+        
+        /// <summary>
+        /// me_telefono_contactoproveedores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender me_telefono_contactoproveedores;
+        
+        /// <summary>
+        /// rfv_telefono_contactoproveedores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_telefono_contactoproveedores;
+        
+        /// <summary>
+        /// txt_email_contactoproveedores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_email_contactoproveedores;
+        
+        /// <summary>
         /// cmd_guarda_proveedores control.
         /// </summary>
         /// <remarks>
@@ -1496,6 +1586,96 @@ namespace wa_pos_ferreteras {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_estado_clientes;
+        
+        /// <summary>
+        /// txt_nombres_contactoclientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_nombres_contactoclientes;
+        
+        /// <summary>
+        /// rfv_nombres_contactoclientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_nombres_contactoclientes;
+        
+        /// <summary>
+        /// txt_apaterno_contactoclientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_apaterno_contactoclientes;
+        
+        /// <summary>
+        /// rfv_apaterno_contactoclientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_apaterno_contactoclientes;
+        
+        /// <summary>
+        /// txt_amaterno_contactoclientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_amaterno_contactoclientes;
+        
+        /// <summary>
+        /// rfv_amaterno_contactoclientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_amaterno_contactoclientes;
+        
+        /// <summary>
+        /// txt_telefono_contactoclientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_telefono_contactoclientes;
+        
+        /// <summary>
+        /// me_telefono_contactoclientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender me_telefono_contactoclientes;
+        
+        /// <summary>
+        /// rfv_telefono_contactoclientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_telefono_contactoclientes;
+        
+        /// <summary>
+        /// txt_email_contactoclientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_email_contactoclientes;
         
         /// <summary>
         /// cmd_guarda_clientes control.

@@ -101,7 +101,20 @@ namespace wa_pos_ferreteras
             pnl_proveedores.Visible = false;
             pnl_clientes.Visible = true;
 
-            ddl_tiporfc_clientes.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
+            using (db_posEntities db_sepomex = new db_posEntities())
+            {
+                var tbl_sepomex = (from c in db_sepomex.fact_tipo_rfc
+
+                                   select c).ToList();
+
+                ddl_tiporfc_clientes.DataSource = tbl_sepomex;
+                ddl_tiporfc_clientes.DataTextField = "desc_tipo_rfc";
+                ddl_tiporfc_clientes.DataValueField = "id_tipo_rfc";
+                ddl_tiporfc_clientes.DataBind();
+                ddl_tiporfc_clientes.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
+
+
+            }
             ddl_colonia_clientes.Items.Insert(0, new ListItem("Seleccionar Colonia", "0"));
 
             rb_agregar_clientes.Checked = false;
@@ -146,7 +159,20 @@ namespace wa_pos_ferreteras
             pnl_clientes.Visible = false;
 
 
-            ddl_tiporfc_proveedores.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
+            using (db_posEntities db_sepomex = new db_posEntities())
+            {
+                var tbl_sepomex = (from c in db_sepomex.fact_tipo_rfc
+
+                                   select c).ToList();
+
+                ddl_tiporfc_proveedores.DataSource = tbl_sepomex;
+                ddl_tiporfc_proveedores.DataTextField = "desc_tipo_rfc";
+                ddl_tiporfc_proveedores.DataValueField = "id_tipo_rfc";
+                ddl_tiporfc_proveedores.DataBind();
+                ddl_tiporfc_proveedores.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
+
+
+            }
             ddl_colonia_proveedores.Items.Insert(0, new ListItem("Seleccionar Colonia", "0"));
 
             rb_agregar_proveedores.Checked = false;
@@ -213,7 +239,20 @@ namespace wa_pos_ferreteras
             pnl_proveedores.Visible = false;
             pnl_clientes.Visible = false;
 
-            ddl_tiporfc_contribuyente.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
+            using (db_posEntities db_sepomex = new db_posEntities())
+            {
+                var tbl_sepomex = (from c in db_sepomex.fact_tipo_rfc
+                                   select c).ToList();
+
+                ddl_tiporfc_contribuyentes.DataSource = tbl_sepomex;
+                ddl_tiporfc_contribuyentes.DataTextField = "desc_tipo_rfc";
+                ddl_tiporfc_contribuyentes.DataValueField = "id_tipo_rfc";
+                ddl_tiporfc_contribuyentes.DataBind();
+                ddl_tiporfc_contribuyentes.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
+
+
+
+            }
             ddl_colonia_contribuyentes.Items.Insert(0, new ListItem("Seleccionar Colonia", "0"));
 
             rb_agregar_contribuyentes.Checked = false;
@@ -225,7 +264,7 @@ namespace wa_pos_ferreteras
             gv_contribuyentes.Visible = false;
             limpiar_contribuyentes();
 
-            rfv_tiporfc_contribuyente.Visible = false;
+            rfv_tiporfc_contribuyentes.Visible = false;
             rfv_rfc_contribuyentes.Visible = false;
             rfv_rs_contribuyentes.Visible = false;
             rfv_calle_contribuyentes.Visible = false;
@@ -1039,7 +1078,7 @@ namespace wa_pos_ferreteras
             else
             {
                 Guid n_fiscal = Guid.NewGuid();
-                int int_idtiporfc = Convert.ToInt32(ddl_tiporfc_contribuyente.SelectedValue);
+                int int_idtiporfc = Convert.ToInt32(ddl_tiporfc_contribuyentes.SelectedValue);
                 string str_rfc = txt_rfc_contribuyentes.Text;
                 string str_razonsocial = txt_rs_contribuyentes.Text;
                 string str_calle = txt_calle_contribuyentes.Text.ToUpper();
@@ -1097,7 +1136,7 @@ namespace wa_pos_ferreteras
                             insert_user.SaveChanges();
                         }
 
-                        rfv_tiporfc_contribuyente.Visible = false;
+                        rfv_tiporfc_contribuyentes.Visible = false;
                         rfv_rfc_contribuyentes.Visible = false;
                         rfv_rs_contribuyentes.Visible = false;
                         rfv_calle_contribuyentes.Visible = false;
@@ -1228,9 +1267,8 @@ namespace wa_pos_ferreteras
 
         private void limpiar_contribuyentes()
         {
-            ddl_tiporfc_contribuyente.Items.Clear();
-            ddl_tiporfc_contribuyente.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
-            ddl_tiporfc_contribuyente.SelectedValue = "0";
+           
+            ddl_tiporfc_contribuyentes.SelectedValue = "0";
             txt_rfc_contribuyentes.Text = "";
             txt_rs_contribuyentes.Text = "";
             txt_telefono_contribuyentes.Text = "";
@@ -1253,25 +1291,14 @@ namespace wa_pos_ferreteras
             cmd_buscar_contribuyentes.Visible = false;
             gv_contribuyentes.Visible = false;
 
-            using (db_posEntities db_sepomex = new db_posEntities())
-            {
-                var tbl_sepomex = (from c in db_sepomex.fact_tipo_rfc
-                                   select c).ToList();
 
-                ddl_tiporfc_contribuyente.DataSource = tbl_sepomex;
-                ddl_tiporfc_contribuyente.DataTextField = "desc_tipo_rfc";
-                ddl_tiporfc_contribuyente.DataValueField = "id_tipo_rfc";
-                ddl_tiporfc_contribuyente.DataBind();
-                ddl_tiporfc_contribuyente.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
+            limpiar_contribuyentes();
 
-                rfv_tiporfc_contribuyente.Visible = true;
-                rfv_rfc_contribuyentes.Visible = true;
-                rfv_rs_contribuyentes.Visible = true;
-                rfv_calle_contribuyentes.Visible = true;
-                rfv_telefono_contribuyentes.Visible = true;
-                rfv_vcp_contribuyentes.Visible = true;
-                limpiar_contribuyentes();
-            }
+            rfv_rfc_contribuyentes.Visible = true;
+            rfv_rs_contribuyentes.Visible = true;
+            rfv_calle_contribuyentes.Visible = true;
+            rfv_telefono_contribuyentes.Visible = true;
+            rfv_vcp_contribuyentes.Visible = true;
         }
 
         protected void rb_editar_contribuyentes_CheckedChanged(object sender, EventArgs e)
@@ -1304,7 +1331,7 @@ namespace wa_pos_ferreteras
 
             limpiar_contribuyentes();
 
-            rfv_tiporfc_contribuyente.Visible = false;
+            rfv_tiporfc_contribuyentes.Visible = false;
             rfv_rfc_contribuyentes.Visible = false;
             rfv_rs_contribuyentes.Visible = false;
             rfv_calle_contribuyentes.Visible = false;
@@ -1339,7 +1366,7 @@ namespace wa_pos_ferreteras
                 gv_contribuyentes.Visible = true;
             }
             limpiar_contribuyentes();
-            rfv_tiporfc_contribuyente.Visible = false;
+            rfv_tiporfc_contribuyentes.Visible = false;
             rfv_rfc_contribuyentes.Visible = false;
             rfv_rs_contribuyentes.Visible = false;
             rfv_calle_contribuyentes.Visible = false;
@@ -1424,13 +1451,13 @@ namespace wa_pos_ferreteras
                             {
                                 var tbl_sepomex = (from c in db_sepomex.fact_tipo_rfc
                                                    select c).ToList();
-                                ddl_tiporfc_contribuyente.DataSource = tbl_sepomex;
-                                ddl_tiporfc_contribuyente.DataTextField = "desc_tipo_rfc";
-                                ddl_tiporfc_contribuyente.DataValueField = "id_tipo_rfc";
-                                ddl_tiporfc_contribuyente.DataBind();
-                                ddl_tiporfc_contribuyente.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
+                                ddl_tiporfc_contribuyentes.DataSource = tbl_sepomex;
+                                ddl_tiporfc_contribuyentes.DataTextField = "desc_tipo_rfc";
+                                ddl_tiporfc_contribuyentes.DataValueField = "id_tipo_rfc";
+                                ddl_tiporfc_contribuyentes.DataBind();
+                                ddl_tiporfc_contribuyentes.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
                             }
-                            ddl_tiporfc_contribuyente.SelectedValue = inf_user[0].id_tipo_rfc.ToString();
+                            ddl_tiporfc_contribuyentes.SelectedValue = inf_user[0].id_tipo_rfc.ToString();
 
                             txt_rfc_contribuyentes.Text = inf_user[0].rfc;
                             txt_rs_contribuyentes.Text = inf_user[0].razon_social;
@@ -1527,7 +1554,7 @@ namespace wa_pos_ferreteras
             else
             {
                 Guid n_fiscal = Guid.NewGuid();
-                int int_idtiporfc = Convert.ToInt32(ddl_tiporfc_contribuyente.SelectedValue);
+                int int_idtiporfc = Convert.ToInt32(ddl_tiporfc_proveedores.SelectedValue);
                 string str_rfc = txt_rfc_proveedores.Text;
                 string str_razonsocial = txt_rs_proveedores.Text;
                 string str_calle = txt_calle_proveedores.Text.ToUpper();
@@ -1585,7 +1612,7 @@ namespace wa_pos_ferreteras
                             insert_user.SaveChanges();
                         }
 
-                        rfv_tiporfc_contribuyente.Visible = false;
+                        rfv_tiporfc_proveedores.Visible = false;
                         rfv_rfc_proveedores.Visible = false;
                         rfv_rs_proveedores.Visible = false;
                         rfv_calle_proveedores.Visible = false;
@@ -1716,9 +1743,7 @@ namespace wa_pos_ferreteras
 
         private void limpiar_proveedores()
         {
-            ddl_tiporfc_contribuyente.Items.Clear();
-            ddl_tiporfc_contribuyente.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
-            ddl_tiporfc_contribuyente.SelectedValue = "0";
+
             txt_rfc_proveedores.Text = "";
             txt_rs_proveedores.Text = "";
             txt_telefono_proveedores.Text = "";
@@ -1741,26 +1766,15 @@ namespace wa_pos_ferreteras
             cmd_buscar_proveedores.Visible = false;
             gv_proveedores.Visible = false;
 
-            using (db_posEntities db_sepomex = new db_posEntities())
-            {
-                var tbl_sepomex = (from c in db_sepomex.fact_tipo_rfc
+            
 
-                                   select c).ToList();
-
-                ddl_tiporfc_contribuyente.DataSource = tbl_sepomex;
-                ddl_tiporfc_contribuyente.DataTextField = "desc_tipo_rfc";
-                ddl_tiporfc_contribuyente.DataValueField = "id_tipo_rfc";
-                ddl_tiporfc_contribuyente.DataBind();
-                ddl_tiporfc_contribuyente.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
-
-                rfv_tiporfc_contribuyente.Visible = true;
-                rfv_rfc_proveedores.Visible = true;
-                rfv_rs_proveedores.Visible = true;
-                rfv_calle_proveedores.Visible = true;
-                rfv_telefono_proveedores.Visible = true;
-                rfv_vcp_proveedores.Visible = true;
-                limpiar_proveedores();
-            }
+            rfv_tiporfc_proveedores.Visible = true;
+            rfv_rfc_proveedores.Visible = true;
+            rfv_rs_proveedores.Visible = true;
+            rfv_calle_proveedores.Visible = true;
+            rfv_telefono_proveedores.Visible = true;
+            rfv_vcp_proveedores.Visible = true;
+            limpiar_proveedores();
         }
 
         protected void rb_editar_proveedores_CheckedChanged(object sender, EventArgs e)
@@ -1793,7 +1807,7 @@ namespace wa_pos_ferreteras
 
             limpiar_proveedores();
 
-            rfv_tiporfc_contribuyente.Visible = false;
+            rfv_tiporfc_proveedores.Visible = false;
             rfv_rfc_proveedores.Visible = false;
             rfv_rs_proveedores.Visible = false;
             rfv_calle_proveedores.Visible = false;
@@ -1828,7 +1842,7 @@ namespace wa_pos_ferreteras
                 gv_proveedores.Visible = true;
             }
             limpiar_proveedores();
-            rfv_tiporfc_contribuyente.Visible = false;
+            rfv_tiporfc_proveedores.Visible = false;
             rfv_rfc_proveedores.Visible = false;
             rfv_rs_proveedores.Visible = false;
             rfv_calle_proveedores.Visible = false;
@@ -1913,13 +1927,13 @@ namespace wa_pos_ferreteras
                             {
                                 var tbl_sepomex = (from c in db_sepomex.fact_tipo_rfc
                                                    select c).ToList();
-                                ddl_tiporfc_contribuyente.DataSource = tbl_sepomex;
-                                ddl_tiporfc_contribuyente.DataTextField = "desc_tipo_rfc";
-                                ddl_tiporfc_contribuyente.DataValueField = "id_tipo_rfc";
-                                ddl_tiporfc_contribuyente.DataBind();
-                                ddl_tiporfc_contribuyente.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
+                                ddl_tiporfc_proveedores.DataSource = tbl_sepomex;
+                                ddl_tiporfc_proveedores.DataTextField = "desc_tipo_rfc";
+                                ddl_tiporfc_proveedores.DataValueField = "id_tipo_rfc";
+                                ddl_tiporfc_proveedores.DataBind();
+                                ddl_tiporfc_proveedores.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
                             }
-                            ddl_tiporfc_contribuyente.SelectedValue = inf_user[0].id_tipo_rfc.ToString();
+                            ddl_tiporfc_proveedores.SelectedValue = inf_user[0].id_tipo_rfc.ToString();
 
                             txt_rfc_proveedores.Text = inf_user[0].rfc;
                             txt_rs_proveedores.Text = inf_user[0].razon_social;
@@ -2016,7 +2030,7 @@ namespace wa_pos_ferreteras
             else
             {
                 Guid n_fiscal = Guid.NewGuid();
-                int int_idtiporfc = Convert.ToInt32(ddl_tiporfc_contribuyente.SelectedValue);
+                int int_idtiporfc = Convert.ToInt32(ddl_tiporfc_clientes.SelectedValue);
                 string str_rfc = txt_rfc_clientes.Text;
                 string str_razonsocial = txt_rs_clientes.Text;
                 string str_calle = txt_calle_clientes.Text.ToUpper();
@@ -2074,7 +2088,7 @@ namespace wa_pos_ferreteras
                             insert_user.SaveChanges();
                         }
 
-                        rfv_tiporfc_contribuyente.Visible = false;
+                        rfv_tiporfc_clientes.Visible = false;
                         rfv_rfc_clientes.Visible = false;
                         rfv_rs_clientes.Visible = false;
                         rfv_calle_clientes.Visible = false;
@@ -2205,9 +2219,7 @@ namespace wa_pos_ferreteras
 
         private void limpiar_clientes()
         {
-            ddl_tiporfc_contribuyente.Items.Clear();
-            ddl_tiporfc_contribuyente.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
-            ddl_tiporfc_contribuyente.SelectedValue = "0";
+
             txt_rfc_clientes.Text = "";
             txt_rs_clientes.Text = "";
             txt_telefono_clientes.Text = "";
@@ -2230,26 +2242,15 @@ namespace wa_pos_ferreteras
             cmd_buscar_clientes.Visible = false;
             gv_clientes.Visible = false;
 
-            using (db_posEntities db_sepomex = new db_posEntities())
-            {
-                var tbl_sepomex = (from c in db_sepomex.fact_tipo_rfc
 
-                                   select c).ToList();
 
-                ddl_tiporfc_contribuyente.DataSource = tbl_sepomex;
-                ddl_tiporfc_contribuyente.DataTextField = "desc_tipo_rfc";
-                ddl_tiporfc_contribuyente.DataValueField = "id_tipo_rfc";
-                ddl_tiporfc_contribuyente.DataBind();
-                ddl_tiporfc_contribuyente.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
-
-                rfv_tiporfc_contribuyente.Visible = true;
-                rfv_rfc_clientes.Visible = true;
-                rfv_rs_clientes.Visible = true;
-                rfv_calle_clientes.Visible = true;
-                rfv_telefono_clientes.Visible = true;
-                rfv_vcp_clientes.Visible = true;
-                limpiar_clientes();
-            }
+            rfv_tiporfc_clientes.Visible = true;
+            rfv_rfc_clientes.Visible = true;
+            rfv_rs_clientes.Visible = true;
+            rfv_calle_clientes.Visible = true;
+            rfv_telefono_clientes.Visible = true;
+            rfv_vcp_clientes.Visible = true;
+            limpiar_clientes();
         }
 
         protected void rb_editar_clientes_CheckedChanged(object sender, EventArgs e)
@@ -2282,7 +2283,7 @@ namespace wa_pos_ferreteras
 
             limpiar_clientes();
 
-            rfv_tiporfc_contribuyente.Visible = false;
+            rfv_tiporfc_clientes.Visible = false;
             rfv_rfc_clientes.Visible = false;
             rfv_rs_clientes.Visible = false;
             rfv_calle_clientes.Visible = false;
@@ -2317,7 +2318,7 @@ namespace wa_pos_ferreteras
                 gv_clientes.Visible = true;
             }
             limpiar_clientes();
-            rfv_tiporfc_contribuyente.Visible = false;
+            rfv_tiporfc_clientes.Visible = false;
             rfv_rfc_clientes.Visible = false;
             rfv_rs_clientes.Visible = false;
             rfv_calle_clientes.Visible = false;
@@ -2402,13 +2403,13 @@ namespace wa_pos_ferreteras
                             {
                                 var tbl_sepomex = (from c in db_sepomex.fact_tipo_rfc
                                                    select c).ToList();
-                                ddl_tiporfc_contribuyente.DataSource = tbl_sepomex;
-                                ddl_tiporfc_contribuyente.DataTextField = "desc_tipo_rfc";
-                                ddl_tiporfc_contribuyente.DataValueField = "id_tipo_rfc";
-                                ddl_tiporfc_contribuyente.DataBind();
-                                ddl_tiporfc_contribuyente.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
+                                ddl_tiporfc_clientes.DataSource = tbl_sepomex;
+                                ddl_tiporfc_clientes.DataTextField = "desc_tipo_rfc";
+                                ddl_tiporfc_clientes.DataValueField = "id_tipo_rfc";
+                                ddl_tiporfc_clientes.DataBind();
+                                ddl_tiporfc_clientes.Items.Insert(0, new ListItem("Seleccionar tipo RFC", "0"));
                             }
-                            ddl_tiporfc_contribuyente.SelectedValue = inf_user[0].id_tipo_rfc.ToString();
+                            ddl_tiporfc_clientes.SelectedValue = inf_user[0].id_tipo_rfc.ToString();
 
                             txt_rfc_clientes.Text = inf_user[0].rfc;
                             txt_rs_clientes.Text = inf_user[0].razon_social;

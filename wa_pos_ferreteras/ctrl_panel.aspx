@@ -28,10 +28,8 @@
                                     <br />
                                     <asp:Label ID="lbl_perfil" runat="server" Text="Perfil: "></asp:Label>
                                     <asp:Label ID="lbl_perfilusuario" runat="server" Text=""></asp:Label>
-
                                     <br />
                                     <asp:Label ID="lbl_empresa" runat="server" Text="Empresa: "></asp:Label>
-
                                     <asp:LinkButton ID="lkb_razonsocial" runat="server" OnClick="lkb_razonsocial_Click" Text=""></asp:LinkButton>
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </p>
@@ -57,8 +55,25 @@
                                                         <asp:LinkButton ID="lkb_panel" runat="server" OnClick="lkb_panel_Click" Text=" Panel"></asp:LinkButton></h4>
                                                 </li>
                                                 <li>
-                                                    <h4><i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                                                        <asp:LinkButton ID="lkb_clientes" runat="server" OnClick="lkb_clientes_Click" Text=" Clientes"></asp:LinkButton></h4>
+                                                    <h4><i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                                        <asp:LinkButton ID="lkb_reportes" runat="server" OnClick="lkb_reportes_Click" Text=" Reportes"></asp:LinkButton></h4>
+                                                </li>
+                                                <li>
+                                                    <h4><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                        <asp:LinkButton ID="Ventas" runat="server" OnClick="Ventas_Click" Text=" Ventas"></asp:LinkButton></h4>
+                                                </li>
+                                                <li>
+                                                    <h4><i class="fa fa-credit-card" aria-hidden="true"></i>
+                                                        <asp:LinkButton ID="lkb_gastos" runat="server" OnClick="lkb_gastos_Click" Text=" Gastos"></asp:LinkButton></h4>
+                                                </li>
+                                                <li>
+                                                    <h4><i class="fa fa-truck" aria-hidden="true"></i>
+                                                        <asp:LinkButton ID="lkb_recepcion" runat="server" OnClick="lkb_recepcion_Click" Text=" Recepción"></asp:LinkButton></h4>
+                                                </li>
+
+                                                <li>
+                                                    <h4><i class="fa fa-road" aria-hidden="true"></i>
+                                                        <asp:LinkButton ID="lkb_entregas" runat="server" OnClick="lkb_entregas_Click" Text=" Entregas"></asp:LinkButton></h4>
                                                 </li>
                                                 <li>
                                                     <h4><i class="fa fa-cube" aria-hidden="true"></i>
@@ -73,37 +88,20 @@
                                                         <asp:LinkButton ID="lkb_rprecios" runat="server" OnClick="lkb_rprecios_Click" Text=" Regla de precios"></asp:LinkButton></h4>
                                                 </li>
                                                 <li>
+                                                    <h4><i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                                        <asp:LinkButton ID="lkb_clientes" runat="server" OnClick="lkb_clientes_Click" Text=" Clientes"></asp:LinkButton></h4>
+                                                </li>
+                                                <li>
                                                     <h4><i class="fa fa-product-hunt" aria-hidden="true"></i>
                                                         <asp:LinkButton ID="lkb_proveedores" runat="server" OnClick="lkb_proveedores_Click" Text=" Proveedores"></asp:LinkButton></h4>
                                                 </li>
                                                 <li>
-                                                    <h4><i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                                        <asp:LinkButton ID="lkb_reportes" runat="server" OnClick="lkb_reportes_Click" Text=" Reportes"></asp:LinkButton></h4>
-                                                </li>
-                                                <li>
-                                                    <h4><i class="fa fa-truck" aria-hidden="true"></i>
-                                                        <asp:LinkButton ID="lkb_recepcion" runat="server" OnClick="lkb_recepcion_Click" Text=" Recepción"></asp:LinkButton></h4>
-                                                </li>
-                                                <li>
-                                                    <h4><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                        <asp:LinkButton ID="Ventas" runat="server" OnClick="Ventas_Click" Text=" Ventas"></asp:LinkButton></h4>
-                                                </li>
-                                                <li>
-                                                    <h4><i class="fa fa-road" aria-hidden="true"></i>
-                                                        <asp:LinkButton ID="lkb_entregas" runat="server" OnClick="lkb_entregas_Click" Text=" Entregas"></asp:LinkButton></h4>
-                                                </li>
-                                                <li>
-                                                    <h4><i class="fa fa-credit-card" aria-hidden="true"></i>
-                                                        <asp:LinkButton ID="lkb_gastos" runat="server" OnClick="lkb_gastos_Click" Text=" Gastos"></asp:LinkButton></h4>
+                                                    <h4><i class="fa fa-building" aria-hidden="true"></i>
+                                                        <asp:LinkButton ID="lkb_contribuyentes" runat="server" OnClick="lkb_contribuyentes_Click" Text=" Contribuyentes"></asp:LinkButton></h4>
                                                 </li>
                                                 <li>
                                                     <h4><i class="fa fa-users" aria-hidden="true"></i>
                                                         <asp:LinkButton ID="lkb_usarios" runat="server" OnClick="lkb_usarios_Click" Text=" Usuarios"></asp:LinkButton></h4>
-                                                </li>
-
-                                                <li>
-                                                    <h4><i class="fa fa-building" aria-hidden="true"></i>
-                                                        <asp:LinkButton ID="lkb_contribuyentes" runat="server" OnClick="lkb_contribuyentes_Click" Text=" Contribuyentes"></asp:LinkButton></h4>
                                                 </li>
                                                 <li>
                                                     <h4><i class="fa fa-gear" aria-hidden="true"></i>
@@ -334,10 +332,10 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <asp:DropDownList CssClass="form-control" ID="ddl_tiporfc_contribuyente" runat="server" ToolTip="Seleccionar tipo RFC"></asp:DropDownList>
-                                                    <asp:RequiredFieldValidator ID="rfv_tiporfc_contribuyente" runat="server" Visible="false"
+                                                    <asp:DropDownList CssClass="form-control" ID="ddl_tiporfc_contribuyentes" runat="server" ToolTip="Seleccionar tipo RFC"></asp:DropDownList>
+                                                    <asp:RequiredFieldValidator ID="rfv_tiporfc_contribuyentes" runat="server" Visible="false"
                                                         ErrorMessage="Campo Requerido"
-                                                        ControlToValidate="ddl_tiporfc_contribuyente" InitialValue="0"
+                                                        ControlToValidate="ddl_tiporfc_contribuyentes" InitialValue="0"
                                                         ForeColor="orange">
                                                     </asp:RequiredFieldValidator>
                                                     <br />
@@ -505,6 +503,45 @@
                                                 <br />
                                                 <asp:TextBox CssClass="form-control" ID="txt_estado_proveedores" runat="server" placeholder="Capturar Estado" Enabled="false"></asp:TextBox>
                                             </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <h3 class="text-center">Contacto de Proveedor</h3>
+                                            <div class="col-md-2">
+                                            </div>
+                                            <div class="col-md-5">
+                                                <asp:TextBox CssClass="form-control" ID="txt_nombres_contactoproveedores" runat="server" placeholder="Capturar Nombre(s)"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfv_nombres_contactoproveedores" runat="server" Visible="false"
+                                                    ControlToValidate="txt_nombres_contactoproveedores"
+                                                    ErrorMessage="Campo Requerido"
+                                                    ForeColor="orange">
+                                                </asp:RequiredFieldValidator>
+                                                <br />
+                                                <asp:TextBox CssClass="form-control" ID="txt_apaterno_contactoproveedores" runat="server" placeholder="Capturar Apellido Paterno"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfv_apaterno_contactoproveedores" runat="server" Visible="false"
+                                                    ControlToValidate="txt_apaterno_contactoproveedores"
+                                                    ErrorMessage="Campo Requerido"
+                                                    ForeColor="orange">
+                                                </asp:RequiredFieldValidator>
+                                                <br />
+                                                <asp:TextBox CssClass="form-control" ID="txt_amaterno_contactoproveedores" runat="server" placeholder="Capturar Apellido Materno"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfv_amaterno_contactoproveedores" runat="server" Visible="false"
+                                                    ControlToValidate="txt_amaterno_contactoproveedores"
+                                                    ErrorMessage="Campo Requerido"
+                                                    ForeColor="orange">
+                                                </asp:RequiredFieldValidator>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <asp:TextBox CssClass="form-control" ID="txt_telefono_contactoproveedores" runat="server" placeholder="Capturar Teléfono"></asp:TextBox>
+                                                <ajaxToolkit:MaskedEditExtender ID="me_telefono_contactoproveedores" runat="server" TargetControlID="txt_telefono_proveedores" Mask="(52) 99.99.99.99.99.99 ext 99999" />
+                                                <asp:RequiredFieldValidator ID="rfv_telefono_contactoproveedores" runat="server" Visible="false"
+                                                    ControlToValidate="txt_telefono_contactoproveedores"
+                                                    ErrorMessage="Campo Requerido"
+                                                    ForeColor="orange">
+                                                </asp:RequiredFieldValidator>
+                                                <br />
+                                                <asp:TextBox CssClass="form-control" ID="txt_email_contactoproveedores" runat="server" placeholder="Capturar Email"></asp:TextBox>
+                                            </div>
                                         </div>
                                         <br />
                                         <div class="row">
@@ -616,6 +653,45 @@
                                                 <asp:TextBox CssClass="form-control" ID="txt_municipio_clientes" runat="server" placeholder="Capturar Municipio" Enabled="false"></asp:TextBox>
                                                 <br />
                                                 <asp:TextBox CssClass="form-control" ID="txt_estado_clientes" runat="server" placeholder="Capturar Estado" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <h3 class="text-center">Contacto de Cliente</h3>
+                                            <div class="col-md-2">
+                                            </div>
+                                            <div class="col-md-5">
+                                                <asp:TextBox CssClass="form-control" ID="txt_nombres_contactoclientes" runat="server" placeholder="Capturar Nombre(s)"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfv_nombres_contactoclientes" runat="server" Visible="false"
+                                                    ControlToValidate="txt_nombres_contactoclientes"
+                                                    ErrorMessage="Campo Requerido"
+                                                    ForeColor="orange">
+                                                </asp:RequiredFieldValidator>
+                                                <br />
+                                                <asp:TextBox CssClass="form-control" ID="txt_apaterno_contactoclientes" runat="server" placeholder="Capturar Apellido Paterno"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfv_apaterno_contactoclientes" runat="server" Visible="false"
+                                                    ControlToValidate="txt_apaterno_contactoclientes"
+                                                    ErrorMessage="Campo Requerido"
+                                                    ForeColor="orange">
+                                                </asp:RequiredFieldValidator>
+                                                <br />
+                                                <asp:TextBox CssClass="form-control" ID="txt_amaterno_contactoclientes" runat="server" placeholder="Capturar Apellido Materno"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfv_amaterno_contactoclientes" runat="server" Visible="false"
+                                                    ControlToValidate="txt_amaterno_contactoclientes"
+                                                    ErrorMessage="Campo Requerido"
+                                                    ForeColor="orange">
+                                                </asp:RequiredFieldValidator>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <asp:TextBox CssClass="form-control" ID="txt_telefono_contactoclientes" runat="server" placeholder="Capturar Teléfono"></asp:TextBox>
+                                                <ajaxToolkit:MaskedEditExtender ID="me_telefono_contactoclientes" runat="server" TargetControlID="txt_telefono_clientes" Mask="(52) 99.99.99.99.99.99 ext 99999" />
+                                                <asp:RequiredFieldValidator ID="rfv_telefono_contactoclientes" runat="server" Visible="false"
+                                                    ControlToValidate="txt_telefono_contactoclientes"
+                                                    ErrorMessage="Campo Requerido"
+                                                    ForeColor="orange">
+                                                </asp:RequiredFieldValidator>
+                                                <br />
+                                                <asp:TextBox CssClass="form-control" ID="txt_email_contactoclientes" runat="server" placeholder="Capturar Email"></asp:TextBox>
                                             </div>
                                         </div>
                                         <br />
